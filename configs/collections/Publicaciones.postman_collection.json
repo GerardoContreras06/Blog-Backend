@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "84d97bf8-62bb-4005-bb05-bd3c4746363b",
+		"name": "Publicaciones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42631856"
+	},
+	"item": [
+		{
+			"name": "Crear publicacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"XD\",\r\n    \"description\": \"jsis\",\r\n    \"course\": \"Matematicas\",\r\n    \"creationDate\": \"2025-05-13\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/LearningBlog/v1/publications/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"LearningBlog",
+						"v1",
+						"publications",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar publicacion por fecha",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/LearningBlog/v1/publications/date?date=2025-05-13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"LearningBlog",
+						"v1",
+						"publications",
+						"date"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2025-05-13"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Publicacion",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"a\",\r\n    \"description\": \"a\",\r\n    \"course\": \"Biologia\",\r\n    \"creationDate\": \"2025-04-24\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/LearningBlog/v1/publications/6824265b9f8bac7ca888d8e6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"LearningBlog",
+						"v1",
+						"publications",
+						"6824265b9f8bac7ca888d8e6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar publicacion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/LearningBlog/v1/publications/6824265b9f8bac7ca888d8e6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"LearningBlog",
+						"v1",
+						"publications",
+						"6824265b9f8bac7ca888d8e6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
