@@ -1,19 +1,19 @@
 {
 	"info": {
-		"_postman_id": "84d97bf8-62bb-4005-bb05-bd3c4746363b",
-		"name": "Publicaciones",
+		"_postman_id": "2630a8a8-e14e-45d7-a797-4e4b62fcef31",
+		"name": "Comentarios",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "42631856"
 	},
 	"item": [
 		{
-			"name": "Crear publicacion",
+			"name": "Crear comentario",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"tung tung sahur\",\r\n    \"description\": \"jcarrillo\",\r\n    \"course\": \"Biologia\",\r\n    \"creationDate\": \"2025-05-13\"\r\n}",
+					"raw": "{\r\n    \"nameUser\": \"Chaval Pulpo\",\r\n    \"content\": \"tralalero tralala\",\r\n    \"publication\": \"XD\",\r\n    \"publicationDate\": \"2025-05-01\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,7 +21,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/LearningBlog/v1/publications/",
+					"raw": "http://localhost:3000/LearningBlog/v1/comments/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -30,7 +30,7 @@
 					"path": [
 						"LearningBlog",
 						"v1",
-						"publications",
+						"comments",
 						""
 					]
 				}
@@ -38,12 +38,12 @@
 			"response": []
 		},
 		{
-			"name": "Buscar publicacion por fecha",
+			"name": "Buscar comentario por fecha",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/LearningBlog/v1/publications/date?date=2025-05-13",
+					"raw": "http://localhost:3000/LearningBlog/v1/comments/date?date=2025-05-01",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -52,13 +52,13 @@
 					"path": [
 						"LearningBlog",
 						"v1",
-						"publications",
+						"comments",
 						"date"
 					],
 					"query": [
 						{
 							"key": "date",
-							"value": "2025-05-13"
+							"value": "2025-05-01"
 						}
 					]
 				}
@@ -66,13 +66,13 @@
 			"response": []
 		},
 		{
-			"name": "Actualizar Publicacion",
+			"name": "Actualizar Comentario",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"a\",\r\n    \"description\": \"a\",\r\n    \"course\": \"Biologia\",\r\n    \"creationDate\": \"2025-04-24\"\r\n}",
+					"raw": "{\r\n    \"nameUser\": \"Luis fonsi\",\r\n    \"content\": \"tung tung sahur\",\r\n    \"publication\": \"tralala tralalero\",\r\n    \"publicationDate\": \"2025-02-11\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -80,7 +80,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/LearningBlog/v1/publications/6824265b9f8bac7ca888d8e6",
+					"raw": "http://localhost:3000/LearningBlog/v1/comments/6825377e591197ea50dc90ce",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -89,20 +89,20 @@
 					"path": [
 						"LearningBlog",
 						"v1",
-						"publications",
-						"6824265b9f8bac7ca888d8e6"
+						"comments",
+						"6825377e591197ea50dc90ce"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Eliminar publicacion",
+			"name": "Eliminar comentario",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/LearningBlog/v1/publications/6824265b9f8bac7ca888d8e6",
+					"raw": "http://localhost:3000/LearningBlog/v1/comments/6825377e591197ea50dc90ce",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -111,8 +111,8 @@
 					"path": [
 						"LearningBlog",
 						"v1",
-						"publications",
-						"6824265b9f8bac7ca888d8e6"
+						"comments",
+						"6825377e591197ea50dc90ce"
 					]
 				}
 			},

@@ -1,19 +1,19 @@
 {
 	"info": {
-		"_postman_id": "84d97bf8-62bb-4005-bb05-bd3c4746363b",
-		"name": "Publicaciones",
+		"_postman_id": "8be24640-86aa-4af2-8c69-c39f9b964ad0",
+		"name": "Categorías",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "42631856"
 	},
 	"item": [
 		{
-			"name": "Crear publicacion",
+			"name": "Crear categoria",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"tung tung sahur\",\r\n    \"description\": \"jcarrillo\",\r\n    \"course\": \"Biologia\",\r\n    \"creationDate\": \"2025-05-13\"\r\n}",
+					"raw": "{\r\n    \"nameCategory\": \"Quimica\",\r\n    \"publication\": \"tralala tralalero\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,7 +21,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/LearningBlog/v1/publications/",
+					"raw": "http://localhost:3000/LearningBlog/v1/categories/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -30,7 +30,7 @@
 					"path": [
 						"LearningBlog",
 						"v1",
-						"publications",
+						"categories",
 						""
 					]
 				}
@@ -38,12 +38,12 @@
 			"response": []
 		},
 		{
-			"name": "Buscar publicacion por fecha",
+			"name": "Buscar categoria",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/LearningBlog/v1/publications/date?date=2025-05-13",
+					"raw": "http://localhost:3000/LearningBlog/v1/categories/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -52,27 +52,21 @@
 					"path": [
 						"LearningBlog",
 						"v1",
-						"publications",
-						"date"
-					],
-					"query": [
-						{
-							"key": "date",
-							"value": "2025-05-13"
-						}
+						"categories",
+						""
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Actualizar Publicacion",
+			"name": "Actualizar categoria",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"a\",\r\n    \"description\": \"a\",\r\n    \"course\": \"Biologia\",\r\n    \"creationDate\": \"2025-04-24\"\r\n}",
+					"raw": "{\r\n    \"nameCategory\": \"Paleontologia\",\r\n    \"publication\": \"tung tung sahur\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -80,7 +74,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/LearningBlog/v1/publications/6824265b9f8bac7ca888d8e6",
+					"raw": "http://localhost:3000/LearningBlog/v1/categories/68257ecc40668ff4ebf896bf",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -89,20 +83,20 @@
 					"path": [
 						"LearningBlog",
 						"v1",
-						"publications",
-						"6824265b9f8bac7ca888d8e6"
+						"categories",
+						"68257ecc40668ff4ebf896bf"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Eliminar publicacion",
+			"name": "Eliminar categoria",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/LearningBlog/v1/publications/6824265b9f8bac7ca888d8e6",
+					"raw": "http://localhost:3000/LearningBlog/v1/categories/68257ecc40668ff4ebf896bf",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -111,8 +105,8 @@
 					"path": [
 						"LearningBlog",
 						"v1",
-						"publications",
-						"6824265b9f8bac7ca888d8e6"
+						"categories",
+						"68257ecc40668ff4ebf896bf"
 					]
 				}
 			},
