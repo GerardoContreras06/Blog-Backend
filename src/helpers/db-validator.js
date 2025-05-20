@@ -12,48 +12,12 @@ export const existeCursoById = async (id = '') => {
     }
 }
 
-export const noExistenteCourse = async (nameCourse = "") => {
-
-   const existeCurso = await Course.findOne({ nameCourse })
-
-    if(!existeCurso){
-        throw new Error(`El curso ${nameCourse} no existe`)
-    }
-}
-
-export const nullCourse = async(id = "") =>{
-
-    const course = await Course.findById(id)
-
-    if(!course){
-        throw new Error (`El ID ${id} no pertenece a ningun curso`)
-    }
-}
-
 export const existePublicacionById = async (id = '') => {
 
     const existePublicacion = await Publication.findById(id);
 
     if(!existePublicacion){
         throw new Error(`El ID ${id} no existe`);
-    }
-}
-
-export const noExistentePublication = async (title = "") => {
-
-   const existePublicacion = await Publication.findOne({ title })
-
-    if(!existePublicacion){
-        throw new Error(`La publicación ${title} no existe`)
-    }
-}
-
-export const nullPublication = async (id = "") =>{
-
-    const publication = await Publication.findById(id)
-
-    if(!publication){
-        throw new Error (`El ID ${id} no pertenece a ninguna publicación`)
     }
 }
 
@@ -72,23 +36,5 @@ export const existeCategoriaById = async (id = '') => {
 
     if(!existeCategoria){
         throw new Error(`El ID ${id} no existe`);
-    }
-}
-
-export const noExistenteCategory = async (nameCategory = "") => {
-
-   const existeCategoria = await Category.findOne({ nameCategory })
-
-    if(!existeCategoria){
-        throw new Error(`La categoria ${nameCategory} no existe`)
-    }
-}
-
-export const nullCategory = async(id = "") =>{
-
-    const category = await Category.findById(id)
-
-    if(!category){
-        throw new Error (`El ID ${id} no pertenece a ninguna categoria`)
     }
 }

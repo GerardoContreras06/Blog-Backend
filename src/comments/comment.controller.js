@@ -1,6 +1,7 @@
 import { request, response } from "express";
 import Comment from './comment.model.js';
 import Publication from '../publications/publication.model.js';
+import mongoose from 'mongoose';
 
 export const getCommentsByDate = async (req = request, res = response) => {
     try {
@@ -37,16 +38,81 @@ export const getCommentsByDate = async (req = request, res = response) => {
     }
 }
 
+export const getComments = async (req = request, res = response) => {
+    try {
+        const { limite = 10, desde = 0} = req.query;
+        const query = { estado: true};
+
+        const [total, comments] = await Promise.all([
+            Comment.countDocuments(query),
+            Comment.find(query)
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ])
+
+        res.status(200).json({
+            success: true,
+            total,
+            comments
+        })
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            msg: 'Error al obtener las publicaciones',
+            error
+        })
+    }
+}
+
+export const getCommentsByPublication = async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    const comments = await Comment.find({ 
+      publication: id,
+      estado: true 
+    }).sort({ publicationDate: -1 });
+
+    return res.status(200).json({
+      success: true,
+      total: comments.length,
+      comments
+    });
+  } catch (error) {
+    
+    return res.status(500).json({
+      success: false,
+      msg: 'Error al obtener los comentarios de la publicación',
+      error: error.message
+    });
+  }
+};
+
 export const createComment = async (req, res) => {
     try {
         const data = req.body;
+        let publicationId;
 
-        const publication = await Publication.findOne({ title: data.publication });
+        
+        if (mongoose.Types.ObjectId.isValid(data.publication)) {
+            
+            publicationId = data.publication;
+        } else {
+           
+            const publication = await Publication.findOne({ title: data.publication });
+            if (!publication) {
+                return res.status(400).json({
+                    succes: false,
+                    message: 'Publicación no encontrada',
+                });
+            }
+            publicationId = publication._id;
+        }
 
         const comment = new Comment({
             ...data,
-            publication: publication._id
-        })
+            publication: publicationId
+        });
 
         await comment.save();
 
@@ -56,10 +122,11 @@ export const createComment = async (req, res) => {
         });
 
     } catch (error) {
+        console.error('Error al crear comentario:', error);
         res.status(500).json({
             succes: false,
             message: 'Error al crear el comentario',
-            error
+            error: error.message
         });
     }
 }

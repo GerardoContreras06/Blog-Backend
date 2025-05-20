@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "682bea5fdc53299fa4abd983"
+  },
+  "nameCourse": "Taller",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-05-20T02:35:11.582Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-20T02:35:11.582Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682bea66dc53299fa4abd985"
+  },
+  "nameCourse": "Tecnologia",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-05-20T02:35:18.198Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-20T02:35:18.198Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682bea70dc53299fa4abd987"
+  },
+  "nameCourse": "Practica Supervisada",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-05-20T02:35:28.692Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-20T02:35:28.692Z"
+  }
+}]

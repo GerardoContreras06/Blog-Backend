@@ -23,17 +23,43 @@ export const getPublicationsByDate = async (req = request, res = response) => {
         ]);
 
         return res.status(200).json({
-            succes: true,
+            success: true,
             total,
             publications
         })
 
     } catch (error) {
         return res.status(500).json({
-            succes: false,
+            success: false,
             msg: 'Error al obtener las publicaciones',
             error
         });
+    }
+}
+
+export const getPublications = async (req = request, res = response) => {
+    try {
+        const { limite = 10, desde = 0} = req.query;
+        const query = { estado: true};
+
+        const [total, publication] = await Promise.all([
+            Publication.countDocuments(query),
+            Publication.find(query)
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ])
+
+        res.status(200).json({
+            success: true,
+            total,
+            publication
+        })
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            msg: 'Error al obtener las publicaciones',
+            error
+        })
     }
 }
 
@@ -51,13 +77,13 @@ export const createPublication = async (req, res) => {
         await publication.save();
 
         res.status(200).json({
-            succes: true,
+            success: true,
             publication
         });
         
     } catch (error) {
         res.status(500).json({
-            succes: false,
+            success: false,
             message: 'Error al crear la publicación',
             error
         });
@@ -78,14 +104,14 @@ export const updatePublication = async (req, res) => {
         const updatedPublication = await Publication.findByIdAndUpdate(id, data, { new: true });
 
         res.status(200).json({
-            succes: true,
+            success: true,
             msg: "Publicación actualizada correctamente",
             publication: updatedPublication
         });
 
     } catch (error) {
         return res.status(500).json({
-            succes: false,
+            success: false,
             msg: 'Error al actualizar la publicación',
             error
         });
@@ -101,13 +127,13 @@ export const deletePublication = async (req, res) => {
         await Publication.findByIdAndUpdate(id, { estado: false });
 
         return res.status(200).json({
-            succes: true,
+            success: true,
             message: 'Publicación eliminada exitosamente'
         })
 
     } catch (error) {
         return res.status(500).json({
-            succes: false,
+            success: false,
             message: 'Error al eliminar la publicación',
             error
         });

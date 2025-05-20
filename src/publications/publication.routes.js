@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { getPublicationsByDate, createPublication, updatePublication, deletePublication } from "./publication.controller.js";
+import { getPublicationsByDate, getPublications ,createPublication, updatePublication, deletePublication } from "./publication.controller.js";
+import { deleteFileOnError } from '../middlewares/delete-file-on-error.js'
 import { validatorCreatePublication, validatorUpdatePublication, validatorDeletePublication } from "../middlewares/validator-publications.js";
 
 const router = Router();
@@ -9,9 +10,15 @@ router.get(
     getPublicationsByDate
 )
 
+router.get(
+    "/",
+    getPublications
+)
+
 router.post(
     "/",
     validatorCreatePublication,
+    deleteFileOnError,
     createPublication
 )
 

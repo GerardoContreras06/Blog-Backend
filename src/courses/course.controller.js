@@ -28,6 +28,32 @@ export const getCoursesByName = async (req = request, res = response) => {
     }
 }
 
+export const getCourseById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        
+        const course = await Course.findById(id);
+        
+        if (!course) {
+            return res.status(404).json({
+                success: false,
+                message: 'Curso no encontrado'
+            });
+        }
+        
+        res.status(200).json({
+            success: true,
+            course
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Error al obtener el curso',
+            error: error.message
+        });
+    }
+}
+
 export const createCourse = async (req, res) => {
     try {
         const data = req.body;

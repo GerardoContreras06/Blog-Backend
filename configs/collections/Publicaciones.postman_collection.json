@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"tung tung sahur\",\r\n    \"description\": \"jcarrillo\",\r\n    \"course\": \"Biologia\",\r\n    \"creationDate\": \"2025-05-13\"\r\n}",
+					"raw": "{\r\n    \"title\": \"Informatica\",\r\n    \"description\": \"No es algo de entender para todo el mundo\",\r\n    \"course\": \"Taller\",\r\n    \"creationDate\": \"2025-03-14\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -43,7 +43,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/LearningBlog/v1/publications/date?date=2025-05-13",
+					"raw": "http://localhost:3000/LearningBlog/v1/publications/date?date=2025-03-14",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -58,7 +58,7 @@
 					"query": [
 						{
 							"key": "date",
-							"value": "2025-05-13"
+							"value": "2025-03-14"
 						}
 					]
 				}
@@ -113,6 +113,28 @@
 						"v1",
 						"publications",
 						"6824265b9f8bac7ca888d8e6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar todas las publicaciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/LearningBlog/v1/publications/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"LearningBlog",
+						"v1",
+						"publications",
+						""
 					]
 				}
 			},

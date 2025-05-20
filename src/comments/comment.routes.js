@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { getCommentsByDate, createComment, updateComment, deleteComment } from "./comment.controller.js";
+import { deleteFileOnError } from "../middlewares/delete-file-on-error.js"
+import { getCommentsByDate, getComments , getCommentsByPublication ,createComment, updateComment, deleteComment } from "./comment.controller.js";
 import { validatorCreateComment, validatorUpdateComment, validatorDeleteComment } from "../middlewares/validator-comments.js";
 
 const router = Router();
@@ -9,10 +10,21 @@ router.get(
     getCommentsByDate
 )
 
+router.get(
+    "/",
+    getComments
+)
+
+router.get(
+    "/publication/:id",
+    getCommentsByPublication
+)
+
 router.post(
     "/",
     validatorCreateComment,
-    createComment
+    createComment,
+    deleteFileOnError
 )
 
 router.put(

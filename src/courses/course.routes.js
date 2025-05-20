@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getCoursesByName, createCourse, updateCourse, deleteCourse } from "./course.controller.js";
+import { getCoursesByName, getCourseById ,createCourse, updateCourse, deleteCourse } from "./course.controller.js";
 import { validatorCreateCourse, validatorUpdateCourse, validatorDeleteCourse } from "../middlewares/validator-course.js";
 
 const router = Router();
@@ -7,6 +7,11 @@ const router = Router();
 router.get(
     "/Name",
     getCoursesByName
+)
+
+router.get(
+    "/:id",
+    getCourseById
 )
 
 router.post(

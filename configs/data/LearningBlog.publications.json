@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "682bf81af2e4081b5d4ab539"
+  },
+  "title": "Informatica",
+  "description": "No es algo de entender para todo el mundo",
+  "course": {
+    "$oid": "682bea5fdc53299fa4abd983"
+  },
+  "creationDate": {
+    "$date": "2025-03-14T00:00:00.000Z"
+  },
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-05-20T03:33:46.549Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-20T03:33:46.549Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682c078beead9aac47abd40f"
+  },
+  "title": "La tecnologia",
+  "description": "La tecnologia ya es parte de nuestra vida",
+  "course": {
+    "$oid": "682bea66dc53299fa4abd985"
+  },
+  "creationDate": {
+    "$date": "2025-01-11T00:00:00.000Z"
+  },
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-05-20T04:39:39.759Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-20T04:39:39.759Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682c07c4eead9aac47abd418"
+  },
+  "title": "Las practicas",
+  "description": "Las practicas son dificiles de conseguir",
+  "course": {
+    "$oid": "682bea70dc53299fa4abd987"
+  },
+  "creationDate": {
+    "$date": "2025-02-14T00:00:00.000Z"
+  },
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-05-20T04:40:36.814Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-20T04:40:36.814Z"
+  }
+}]

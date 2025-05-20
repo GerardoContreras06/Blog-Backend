@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nameCourse\": \"Biologia\"\r\n}",
+					"raw": "{\r\n    \"nameCourse\": \"Practica Supervisada\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -55,7 +55,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/LearningBlog/v1/courses/name?name=Matematicas",
+					"raw": "http://localhost:3000/LearningBlog/v1/courses/name?name=Taller",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -70,7 +70,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "Matematicas"
+							"value": "Taller"
 						}
 					]
 				}

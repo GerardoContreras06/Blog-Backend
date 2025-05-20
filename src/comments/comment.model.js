@@ -13,12 +13,10 @@ const CommentSchema = new Schema({
     },
     publication: {
         type: Schema.Types.ObjectId,
-        ref: 'publication',
-        required: true
+        ref: 'publication'
     },
     publicationDate: {
         type: Date,
-        required: true
     },
     estado: {
         type: Boolean,
